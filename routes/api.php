@@ -14,11 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('companie', 'CompaniesController@getAllCompanies');
-Route::get('companie/{id}', 'CompaniesController@getCompanie');
-Route::post('companie', 'CompaniesController@createCompanie');
-Route::put('companie/{id}', 'CompaniesController@updateCompanie');
-Route::delete('companie/{id}','CompaniesController@deleteCompanie');
+Route::get('company', 'CompaniesController@getAllCompanies');
+Route::get('company/{id}', 'CompaniesController@getCompany');
+Route::post('company', 'CompaniesController@createCompany');
+Route::put('company/{id}', 'CompaniesController@updateCompany');
+Route::delete('company/{id}','CompaniesController@deleteCompany');
 
 Route::get('job', 'JobsController@getAllJobs');
 Route::get('job/{id}', 'JobsController@getJob');

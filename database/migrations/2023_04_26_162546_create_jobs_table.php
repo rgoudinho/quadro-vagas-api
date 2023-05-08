@@ -16,8 +16,8 @@ class CreateJobsTable extends Migration
         Schema::create('jobs', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->integer('companie_id')->unsigned();
-            $table->foreign('companie_id')->references('id')->on('companies');
+            $table->integer('company_id')->unsigned();
+            $table->foreign('company_id')->references('id')->on('companies');
 
             $table->string('title', 200);
             $table->float('wage');

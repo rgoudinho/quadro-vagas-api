@@ -9,34 +9,34 @@ class CompaniesController extends Controller
 {
     public function getAllCompanies()
     {
-        $companie = Companies::all()->toJson(JSON_PRETTY_PRINT);
-        return response($companie);
+        $company = Companies::all()->toJson(JSON_PRETTY_PRINT);
+        return response($company);
     }
 
-    public function createCompanie(Request $request)
+    public function createCompany(Request $request)
     {
-        $companie = new Companies;
-        $companie->name = $request->name;
-        $companie->save();
+        $company = new Companies;
+        $company->name = $request->name;
+        $company->save();
 
         return response()->json([
-            "message" => "companie record created"
+            "message" => "company record created"
         ], 201);
     }
 
-    public function getCompanie($id)
+    public function getCompany($id)
     {
         if(Companies::where('id', $id)->exists()){
-            $companie = Companies::where('id', $id)->get()->toJson(JSON_PRETTY_PRINT);
-            return response($companie, 200);
+            $company = Companies::where('id', $id)->get()->toJson(JSON_PRETTY_PRINT);
+            return response($company, 200);
           } else {
             return response()->json([
-              "message" => "Companie not found"
+              "message" => "Company not found"
             ], 404);
         }
     }
 
-    public function updateCompanie(Request $request, $id)
+    public function updateCompany(Request $request, $id)
     {
         if (Companies::where('id', $id)->exists()) {
             $student = Companies::find($id);
@@ -48,12 +48,12 @@ class CompaniesController extends Controller
             ], 200);
             } else {
             return response()->json([
-                "message" => "Companie not found"
+                "message" => "Company not found"
             ], 404);
         }
     }
 
-    public function deleteCompanie($id)
+    public function deleteCompany($id)
     {
         if(Companies::where('id', $id)->exists()){
             $job = Companies::find($id);
@@ -64,7 +64,7 @@ class CompaniesController extends Controller
             ], 202);
         } else {
             return response()->json([
-                "message" => "Companie not found"
+                "message" => "Company not found"
             ], 404);
         }
     }

@@ -19,7 +19,7 @@ class JobsController extends Controller
         $jobs->title = $request->title;
         $jobs->wage = $request->wage;
         $jobs->description = $request->description;
-        $jobs->companie_id = $request->companie_id;
+        $jobs->company_id = $request->company_id;
         $jobs->save();
 
         return response()->json([
@@ -46,7 +46,7 @@ class JobsController extends Controller
             $student->title = is_null($request->title) ? $student->title : $request->title;
             $student->wage = is_null($request->wage) ? $student->wage : $request->wage;
             $student->description = is_null($request->description) ? $student->description : $request->description;
-            $student->companie_id = is_null($request->companie_id) ? $student->companie_id : $request->companie_id;
+            $student->company_id = is_null($request->company_id) ? $student->company_id : $request->company_id;
             $student->save();
 
             return response()->json([
